@@ -1,0 +1,103 @@
+.product-in-list {
+  width: 20%;
+  margin-right: 5px;
+
+  .product-image {
+    background-color: rgb(245, 241, 241);
+    padding: 35px 10px 0px;
+    border-radius: 7px 7px 0 0;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    // opacity: 0.5;
+  }
+
+  .product-in-list-details {
+    background-color: white;
+    border: 2px solid rgb(245, 241, 241);
+    border-radius: 0 0 7px 7px;
+    padding: 10px;
+
+    .product-name {
+      font-size: 1.2rem;
+      line-height: 25px;
+      margin-bottom: 10px;
+      // height: 3em; /* Adjust the height as needed to show 3 lines */
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Number of lines to show */
+      -webkit-box-orient: vertical;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: rgb(201, 131, 2);
+        }
+      }
+    }
+
+    .pack {
+      background-color: rgb(230, 229, 229);
+      padding: 5px;
+      font-weight: 100;
+    }
+
+    .quantity {
+      color: rgb(67, 67, 67);
+      margin: 10px 0;
+    }
+  }
+}
+
+.price-details {
+  position: relative;
+
+  .dollar {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 5px;
+  }
+  .price {
+    font-size: 2.2rem;
+    font-weight: 100;
+    padding-left: 5px;
+    padding-right: 15px;
+    display: inline-block;
+  }
+
+  .nine-nine {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 5px;
+    left: 38px;
+  }
+  .count {
+    color: rgb(67, 67, 67);
+  }
+  
+  .delivery{
+    margin-top: 5px;
+  }
+
+  .ships-to{
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+}
+
+.saving{
+  margin: 10px 0;
+
+  .save{
+  background-color: #7fda69;
+  padding: 3px 5px;
+}
+
+.coupon{
+  font-size: 0.8rem;
+}
+}

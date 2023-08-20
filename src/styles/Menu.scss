@@ -1,0 +1,38 @@
+.menu {
+  width: 100%;
+  background-color: #232f3e;
+  color: white;
+  display: flex;
+  box-sizing: border-box;
+  height: 35px;
+
+  .all {
+    padding: 8px 9px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid white;
+    }
+  }
+
+  ul {
+    display: flex;
+    box-sizing: border-box;
+
+    li {
+      list-style-type: none;
+      padding: 8px 9px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid white;
+      }
+
+     
+    }
+  }
+}
+ a {
+        color: white;
+        text-decoration: none;
+      }

@@ -1,0 +1,42 @@
+.product-slide {
+  overflow: hidden;
+  background-color: white;
+  padding: 25px;
+  position: relative;
+  margin-bottom: 20px;
+
+  .slide-container {
+    overflow-x: unset;
+  }
+
+  .next,
+  .prev {
+    // padding: 115px 15px;
+    padding: 2% 0.5%;
+    position: absolute;
+    top: 40%;
+    background-color: white;
+    border: 3px solid white;
+    outline: 1px solid white;
+
+    &:hover {
+      border: 3px solid #007185;
+      outline: 1px solid white;
+    }
+  }
+  .next {
+    right: 1%;
+  }
+  .prev {
+    left: 1%;
+  }
+}
+.slide-items {
+  display: flex;
+  margin: 10px 0;
+  transition: transform 0.5s ease;
+
+  img {
+    padding: 0 10px;
+  }
+}

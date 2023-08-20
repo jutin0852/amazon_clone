@@ -1,0 +1,49 @@
+.drop-down {
+  position: relative;
+
+  .drop-down-title {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: rgb(234, 231, 231);
+    font-size: 0.85rem;
+    padding: 2px 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px lightgrey;
+// #007185 
+
+    &:hover{
+        background-color: rgb(230, 225, 225);
+    }
+
+  }
+  ul {
+    list-style-type: none;
+    border: 1px solid lightgrey;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: inherit;
+    background-color: white;
+    width: 180px;
+    padding: 5px 0;
+    border-radius: 5px;
+
+    li {
+      padding: 5px 12px;
+      border: 1px solid white;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid lightgray;
+        background-color: rgb(235, 232, 232);
+      }
+
+
+    }
+  }
+}
+.active {
+        border-color: #d5d9d9;
+        background-color: #edfdff;
+        border-color: #007185 !important;
+      }
