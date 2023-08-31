@@ -1,0 +1,49 @@
+.footer {
+  .footer1 {
+    background-color: #314256;
+    text-align: center;
+    padding: 15px ;
+    color: white;
+    cursor: pointer;
+
+    &:hover{
+          background-color: #495c70;
+
+    }
+  }
+  .footer2 {
+    display: flex;
+    background-color: #232f3e;
+    padding: 40px 0;
+
+    .footer2-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      ul {
+        margin-right: 50px;
+
+        h3 {
+          color: white;
+          padding: 5px 0;
+        }
+
+        li {
+          list-style-type: none;
+          font-size: 1rem;
+          padding: 5px 0;
+
+          a {
+            color: #ddd;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

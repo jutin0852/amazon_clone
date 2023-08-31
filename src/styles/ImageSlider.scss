@@ -1,0 +1,44 @@
+.slider-container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-color: lightgrey;
+
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+  
+  .next,
+  .prev {
+    padding: 7% 2%;
+    position: absolute;
+    top: 0;
+
+    &:hover {
+      border: 3px solid #007185;
+      outline: 1px solid white;
+    }
+  }
+  .next {
+    right: 0;
+  }
+  .prev {
+    left: 0;
+  }
+  .gradient {
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-image: linear-gradient(transparent, rgba(255, 255, 255));
+  }
+}

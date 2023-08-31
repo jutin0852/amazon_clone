@@ -1,0 +1,44 @@
+.product-listing {
+  .list-header {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 6px lightgrey;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .list-container {
+    display: flex;
+    padding: 20px 10px;
+
+    .list-sorting {
+      width: 20%;
+
+      ul {
+        padding: 5px 10px;
+
+        li {
+          list-style-type: none;
+          a {
+            color: black;
+          }
+          .isActive {
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .product-list {
+      width: 80%;
+
+      .products {
+        display: flex;
+      }
+    }
+  }
+}
