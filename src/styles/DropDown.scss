@@ -9,12 +9,11 @@
     padding: 2px 5px;
     cursor: pointer;
     box-shadow: 1px 1px 1px lightgrey;
-// #007185 
+    // #007185
 
-    &:hover{
-        background-color: rgb(230, 225, 225);
+    &:hover {
+      background-color: rgb(230, 225, 225);
     }
-
   }
   ul {
     list-style-type: none;
@@ -37,13 +36,11 @@
         border: 1px solid lightgray;
         background-color: rgb(235, 232, 232);
       }
-
-
     }
   }
+  .active {
+    border-color: #d5d9d9;
+    background-color: #edfdff;
+    border-color: #007185 !important;
+  }
 }
-.active {
-        border-color: #d5d9d9;
-        background-color: #edfdff;
-        border-color: #007185 !important;
-      }

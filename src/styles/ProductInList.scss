@@ -3,13 +3,17 @@
   margin-right: 5px;
 
   .product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(245, 241, 241);
     padding: 35px 10px 0px;
     border-radius: 7px 7px 0 0;
+    
   }
 
   img {
-    width: 100%;
+    width: 80px;
     border-radius: 4px;
     // opacity: 0.5;
   }
@@ -78,26 +82,26 @@
   .count {
     color: rgb(67, 67, 67);
   }
-  
-  .delivery{
+
+  .delivery {
     margin-top: 5px;
   }
 
-  .ships-to{
+  .ships-to {
     font-size: 0.9rem;
     margin: 5px 0;
   }
 }
 
-.saving{
+.saving {
   margin: 10px 0;
 
-  .save{
-  background-color: #7fda69;
-  padding: 3px 5px;
-}
+  .save {
+    background-color: #7fda69;
+    padding: 3px 5px;
+  }
 
-.coupon{
-  font-size: 0.8rem;
-}
+  .coupon {
+    font-size: 0.8rem;
+  }
 }

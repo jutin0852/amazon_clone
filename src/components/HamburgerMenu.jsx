@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function HamburgerMenu({ active, setActive }) {
   const [slide, setSlide] = useState(0);
   const [categoryName, setCategoryName] = useState("Electronics");
+  // console.log(categoryName)
   const ref = useRef(null);
 
   const handleMouseDown = (e) => {
@@ -30,11 +31,15 @@ function HamburgerMenu({ active, setActive }) {
       document.removeEventListener("mousedown", handleMouseDown);
     };
   }, [active]);
+
   return (
     <>
       {active && (
         <div className={`Hamburger-Menu `}>
-          <div className="menu-layout" ref={ref}>
+          <div
+            className="menu-layout"
+            ref={ref}
+          >
             <div className="menu-head">
               <h2>
                 <Link>Hello, Sign in</Link>
@@ -51,10 +56,8 @@ function HamburgerMenu({ active, setActive }) {
                   setSlide={setSlide}
                   setCategoryName={setCategoryName}
                   categories={categories}
+                  setActive={setActive}
                 />
-
-                <h2>Shop by Department</h2>
-                <MenuList categories={categories} />
               </div>
 
               <div className="menu-list">
@@ -62,9 +65,22 @@ function HamburgerMenu({ active, setActive }) {
 
                 <h2>{categoryName}</h2>
 
-                <ul style={{border:"none"}}>
+                <ul style={{ border: "none" }}>
                   {cat.subCategories.map((subCat, index) => (
-                    <li key={index}>{subCat.subCategoryName}</li>
+                    <li
+                      key={index}
+                      onClick={() => {
+                        setActive(false);
+                        document.body.classList.remove("no-scroll");
+                        setSlide(0);
+                      }}
+                    >
+                      <Link
+                        to={`products?category=${cat.categorySlug}&subcategory=${subCat.categorySlug}`}
+                      >
+                        {subCat.subCategoryName}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -76,27 +92,35 @@ function HamburgerMenu({ active, setActive }) {
   );
 }
 
-function MenuList({ categories, setSlide, setCategoryName }) {
+function MenuList({ categories, setSlide, setCategoryName, setActive }) {
   const [viewMore, setViewMore] = useState(false);
 
   return (
-    <ul>
-      {categories
-        .slice(0, viewMore ? categories.length : 3)
-        .map((category, index) => (
-          <li
-            key={index}
-            onClick={() => {
-              setSlide(1);
-              setCategoryName(category.categoryName);
-            }}
-          >
-            {category.categoryName}
-          </li>
-        ))}
+    <div className="first-slide">
+      <ul>
+        {categories
+          .slice(0, viewMore ? categories.length : 3)
+          .map((category, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                setSlide(1);
+                setCategoryName(category.categoryName);
+              }}
+            >
+              {category.categoryName}
+            </li>
+          ))}
 
-      <li onClick={() => setViewMore(!viewMore)}>see more</li>
-    </ul>
+        <li
+          onClick={(e) => {
+            setViewMore(!viewMore);
+          }}
+        >
+          see more
+        </li>
+      </ul>
+    </div>
   );
 }
 export default HamburgerMenu;

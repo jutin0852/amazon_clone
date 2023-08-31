@@ -12,6 +12,8 @@
     height: 100vh;
     background-color: white;
     overflow: hidden;
+    transition: ease-in 1s;
+    animation: menu 0.2s ease-in forwards;
 
     .menu-head {
       background-color: #232f3e;
@@ -29,6 +31,12 @@
       overflow-y: scroll;
       height: 95%;
       min-width: 360px;
+
+      .first-slide {
+        li {
+          padding: 10px 40px;
+        }
+      }
 
       h4 {
         margin-top: 10px;
@@ -52,9 +60,15 @@
       width: 100%;
 
       li {
-        padding: 10px 40px;
         text-decoration: none;
-        // border: 1px solid black;
+        padding: 0px;
+
+        a {
+          color: black;
+          padding: 10px 40px;
+          display: block;
+          width: inherit;
+        }
 
         &:hover {
           background-color: rgb(241, 241, 241);
@@ -64,3 +78,11 @@
   }
 }
 
+@keyframes menu {
+  from {
+    transform: translateX(-370px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

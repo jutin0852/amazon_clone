@@ -1,6 +1,6 @@
 import React from "react";
 import ImageSlider from "../components/ImageSlider";
-import AllProducts from "../components/AllProducts";
+import ProductsInHome from "../components/ProductsInHome";
 import "../styles/home.scss";
 import Footer from "../components/Footer";
 
@@ -12,7 +12,7 @@ const imagesForSlider = [
   "51RPiINhM7L._SX1500_.jpg",
 ];
 
-function Home() {
+function HomePage() {
   
   return (
     <div className="home">
@@ -20,7 +20,7 @@ function Home() {
         <ImageSlider images={imagesForSlider} />
       </div>
       <div className="products">
-        <AllProducts />
+        <ProductsInHome />
       </div>
       <Footer />
 
@@ -28,4 +28,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

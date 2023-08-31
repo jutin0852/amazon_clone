@@ -77,7 +77,7 @@ const deals = [
 ];
 
 
-export default function AllProducts() {
+export default function ProductsInHome() {
   return (
     <div>
       <div className="all-products">

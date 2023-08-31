@@ -4,14 +4,22 @@ export const categories = [
     categorySlug: "electronics",
     subCategories: [
       {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
+        subCategoryName: "Accessories & Supplies",
+        categorySlug: "accessories-and-supplies",
+      },
+      {
+        subCategoryName: "Camera & Photo",
+        categorySlug: "camera-and-photo",
+      },
+      {
+        subCategoryName: "Home Appliance",
+        categorySlug: "home-appliance",
       },
     ],
   },
   {
     categoryName: "Computers",
-    categorySlug: "electronics",
+    categorySlug: "computers",
     subCategories: [
       {
         subCategoryName: "Computer Components",
@@ -20,102 +28,40 @@ export const categories = [
     ],
   },
   {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
+    categoryName: "Smart Home",
+    categorySlug: "smart-home",
     subCategories: [
       {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
+        subCategoryName: "Smart Home Lighting",
+        categorySlug: "smart-home-lighting",
       },
     ],
   },
   {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
+    categoryName: "Baby",
+    categorySlug: "baby",
     subCategories: [
       {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
+        subCategoryName: "Activity & Entertainment",
+        categorySlug: "activity-and-entertainment",
+      },
+      {
+        subCategoryName: "Baby & Toddler Toys",
+        categorySlug: "baby-and-toddler-toys",
       },
     ],
   },
   {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
+    categoryName: "Beauty & Personal Care",
+    categorySlug: "beauty-and-personal-care",
     subCategories: [
       {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
+        subCategoryName: "Personal Care",
+        categorySlug: "personal-care",
       },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
       {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
-      },
-    ],
-  },
-  {
-    categoryName: "Electronics",
-    categorySlug: "electronics",
-    subCategories: [
-      {
-        subCategoryName: "Home Appliances",
-        categorySlug: "home-appliances",
+        subCategoryName: "Skin Care",
+        categorySlug: "skin-care",
       },
     ],
   },
