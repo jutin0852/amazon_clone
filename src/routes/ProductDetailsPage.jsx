@@ -8,7 +8,7 @@ function ProductDetailsPage() {
 
   return (
     <div>
-      <div>{productName}</div>
+      <div></div>
       <div></div>
     </div>
   );
