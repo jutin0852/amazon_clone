@@ -12,6 +12,14 @@ export const products = [
     },
     productImgs: {
       displayImg: "/images/product/personal_care/personal_care1.jpg",
+      detailsImg: [
+        "/images/product/personal_care/personal_care1.jpg",
+        "/images/product/personal_care/personal_care2big.jpg",
+        "/images/product/personal_care/personal_care3big.jpg",
+        "/images/product/personal_care/personal_care4big.jpg",
+        "/images/product/personal_care/personal_care5big.jpg",
+        "/images/product/personal_care/personal_care6big.jpg",
+      ],
     },
     category: {
       categoryName: "Beauty & Personal Care",
