@@ -12,19 +12,36 @@ function ProductDetailsPage() {
     <div className="product-details-page">
       <p>{`${category.categoryName} > ${category.subCategory.categoryName}`}</p>
 
-      <div className="img-preview">
-        <div className="small-img-preview">
-          {productImgs.detailsImg.map((img, index) => (
-            <div className="small-img" onMouseEnter={(e) => {setImgPreview(img)}}>
-              <img src={img} key={index} alt={img} />
-            </div>
-          ))}
+      <div className="product-details">
+        <div className="img-preview">
+          <div className="small-img-preview">
+            {productImgs.detailsImg.map((img, index) => (
+              <div
+                className="small-img"
+                onMouseEnter={(e) => {
+                  setImgPreview(img);
+                }}
+              >
+                <img src={img} key={index} alt={img} />
+              </div>
+            ))}
+          </div>
+          <div className="big-img-preview">
+            <img src={imgPreview} alt="" />
+          </div>
         </div>
-        <div className='big-img-preview'>
-          <img src={imgPreview} alt="" />
+
+        <div className="details">
+          
+          <div className="product-spec">
+            <p className="product-name">{productName}</p>
+          </div>
+
+          <div className="order-details">
+
+          </div>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
