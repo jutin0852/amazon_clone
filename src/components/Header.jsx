@@ -3,6 +3,7 @@ import "../styles/Header.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link } from "react-router-dom";
+import { useCartId } from "./cartContext";
 const category = [
   "All",
   "Arts and craft",
@@ -32,9 +33,10 @@ const category = [
   "Womens Fashion",
 ];
 function Header() {
+  const cart = useCartId()
   return (
     <div className="header">
-      <Link to='/'>
+      <Link to="/">
         <div className="amazon-container">
           <div className="amazon-logo"> </div>
         </div>
@@ -88,11 +90,13 @@ function Header() {
           <span>Returns</span>
           <strong>& Orders </strong>
         </div>
-        <div className="cart">
-          <div className="cart-logo"></div>
-          <strong className="cart-name">Cart</strong>
-          <strong className="cart-num">0</strong>
-        </div>
+        <Link to={"cart"}>
+          <div className="cart">
+            <div className="cart-logo"></div>
+            <strong className="cart-name">Cart</strong>
+            <strong className="cart-num">{cart.length}</strong>
+          </div>
+        </Link>
       </div>
     </div>
   );

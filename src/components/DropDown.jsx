@@ -3,16 +3,10 @@ import "../styles/DropDown.scss";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
 
-const options = [
-  "Featured",
-  "Price: Low to High",
-  "Price: High to Low ",
-  "Avg. Customer Review",
-  "Best Sellers",
-];
 
-function DropDown() {
-  const [title, setTitle] = useState("Featured");
+
+function DropDown({options,sort}) {
+  const [title, setTitle] = useState(options[0]);
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
 
@@ -41,7 +35,7 @@ function DropDown() {
           setIsOpen(!isOpen);
         }}
       >
-        Sort By: {title}
+        {sort}{title}
       </div>
       {isOpen && (
         <ul ref={ref}>

@@ -3,8 +3,16 @@ import "../styles/ProductListPage.scss";
 import DropDown from "../components/DropDown";
 import ProductInList from "../components/ProductInList";
 import { categories } from "../components/categories";
-import {NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { products } from "../components/allProducts";
+
+const options = [
+  "Featured",
+  "Price: Low to High",
+  "Price: High to Low ",
+  "Avg. Customer Review",
+  "Best Sellers",
+];
 
 function ProductListPage() {
   const location = useLocation();
@@ -21,8 +29,8 @@ function ProductListPage() {
     else if (category) return product.category.categorySlug === category;
   });
 
-  console.log(category , subcategory);
-  console.log(product)
+  console.log(category, subcategory);
+  console.log(product);
 
   const cat = categories.find(
     (categories) => categories.categorySlug.toLowerCase() === category
@@ -32,7 +40,7 @@ function ProductListPage() {
     <div className="product-listing">
       <div className="list-header">
         <p> {product.length} results</p>
-        <DropDown />
+        <DropDown sort={`sort by: `} options={options} />
       </div>
       <div className="list-container">
         <div className="list-sorting">
@@ -40,8 +48,11 @@ function ProductListPage() {
           <ul>
             {cat.subCategories.map((subcat, index) => (
               <li key={index}>
-                <NavLink className={ subcat.categorySlug === subcategory ? 'isActive' : '' }
-                  to={`?category=${cat.categorySlug}&subcategory=${subcat.categorySlug}` }
+                <NavLink
+                  className={
+                    subcat.categorySlug === subcategory ? "isActive" : ""
+                  }
+                  to={`?category=${cat.categorySlug}&subcategory=${subcat.categorySlug}`}
                 >
                   {subcat.subCategoryName}
                 </NavLink>
@@ -54,15 +65,11 @@ function ProductListPage() {
           <div className="products">
             {product.length !== 0 ? (
               product.map((product, index) => (
-                <ProductInList key={index} product={product} /> 
+                <ProductInList key={index} product={product} />
               ))
             ) : (
               <h2>no product</h2>
             )}
-            {/* <ProductInList />
-            <ProductInList />
-            <ProductInList />
-            <ProductInList /> */}
           </div>
         </div>
       </div>
