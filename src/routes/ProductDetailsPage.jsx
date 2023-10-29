@@ -117,7 +117,7 @@ function ProductDetailsPage() {
               </div>
               <h3 style={{ color: "green " }}>in Stock</h3>
               <DropDown options={[1, 2, 3]} sort={`qty:`} />
-              <Link to={"/cart"}>
+              <Link to={"/cart/saved"}>
                 <button onClick={(e)=>{
                   dispatch({
                     type:"addToCart",

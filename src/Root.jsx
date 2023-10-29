@@ -10,7 +10,7 @@ import {
 } from "./components/cartContext";
 
 function Root() {
-  const [cart, dispatch] = useReducer(CartReducer,[]);
+  const [cart, dispatch] = useReducer(CartReducer,[1]);
 
   return (
     <cartItemID.Provider value={cart}>

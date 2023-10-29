@@ -2,7 +2,7 @@ export const products = [
   {
     productId:1,
     productName:
-      "Hismile v34 Colour Corrector, Tooth Stain Removal, Teeth Whitening Booster, Purple Toothpaste, Colour Correcting, Hismile V34, Hismile Colour Corrector, Tooth Colour Corrector",
+      "Hismile v34 Colour Corrector, Tooth Stain Removal, Teeth Whitening Booster, Purple Toothpaste, Colour Correcting, Hismile V34",
     brand: "HISMILE",
     productBenefits: "Whitening",
     itemForm: "Gel",
@@ -16,6 +16,7 @@ export const products = [
       type: "Typical",
       typePrice: "$23.20",
       percentOff: "-24%",
+      price:"$22"
     },
     aboutItem: [
       "Instantly cancels yellow undertones for a whiter smile",
@@ -26,6 +27,7 @@ export const products = [
     note: "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing",
     productImgs: {
       displayImg: "/images/product/personal_care/personal_care1.jpg",
+      cartImg:"/images/product/personal_care/cartimg.jpg",
       detailsImg: [
         "/images/product/personal_care/personal_care1.jpg",
         "/images/product/personal_care/personal_care2big.jpg",
