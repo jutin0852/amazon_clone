@@ -15,4 +15,7 @@ export function CartReducer(cart, action) {
   if (action.type === "addToCart") {
     return [...cart, action.id];
   }
+  if (action.type === "RemoveFromCart") {
+    return cart.filter((item) => item !== action.id);
+  }
 }

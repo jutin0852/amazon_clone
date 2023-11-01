@@ -24,7 +24,7 @@ function ProductDetailsPage() {
     note,
   } = useLoaderData();
 
-  const dispatch = useCartDispatch()
+  const dispatch = useCartDispatch();
   const [imgPreview, setImgPreview] = useState(productImgs.detailsImg[0]);
 
   return (
@@ -35,7 +35,8 @@ function ProductDetailsPage() {
         <div className="img-preview">
           <div className="small-img-preview">
             {productImgs.detailsImg.map((img, index) => (
-              <div key={index}
+              <div
+                key={index}
                 className="small-img"
                 onMouseEnter={(e) => {
                   setImgPreview(img);
@@ -96,8 +97,8 @@ function ProductDetailsPage() {
               <div className="product-info-2">
                 <h2>About this item</h2>
                 <ul>
-                  {aboutItem.map((detail,index) => (
-                    <li key={index} >{detail}</li>
+                  {aboutItem.map((detail, index) => (
+                    <li key={index}>{detail}</li>
                   ))}
                 </ul>
                 <p>
@@ -117,13 +118,17 @@ function ProductDetailsPage() {
               </div>
               <h3 style={{ color: "green " }}>in Stock</h3>
               <DropDown options={[1, 2, 3]} sort={`qty:`} />
-              <Link to={"/cart/saved"}>
-                <button onClick={(e)=>{
-                  dispatch({
-                    type:"addToCart",
-                    id:productId
-                  })
-                }}>Add to cart</button>
+              <Link to={"/cart"}>
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: "addToCart",
+                      id: productId,
+                    });
+                  }}
+                >
+                  Add to cart
+                </button>
               </Link>
               <button>Buy Now</button>
             </div>

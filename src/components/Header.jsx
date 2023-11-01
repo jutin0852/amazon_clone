@@ -90,7 +90,7 @@ function Header() {
           <span>Returns</span>
           <strong>& Orders </strong>
         </div>
-        <Link to={"cart/saved"}>
+        <Link to={"/cart"}>
           <div className="cart">
             <div className="cart-logo"></div>
             <strong className="cart-name">Cart</strong>

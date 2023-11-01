@@ -1,17 +1,20 @@
 import React from "react";
-import { useCartDispatch, useCartId } from "../components/cartContext";
+import { useCartId } from "../components/cartContext";
 import { products } from "../components/allProducts";
 import "../styles/cartPage.scss";
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet,NavLink } from "react-router-dom";
 import CartItem from "../components/cartItem";
 
+
 export default function CartPage() {
+  
   const cartItems = useCartId();
-  const cartproducts = cartItems.map((cartid) =>
+  let cartproducts = cartItems.map((cartid) =>
     products.find((product) => product.productId === cartid)
   );
 
   console.log(cartproducts, cartItems);
+
   return (
     <div className="cart-page">
       <div className="cart">
@@ -19,7 +22,7 @@ export default function CartPage() {
           <div className="item-in-cart">
             <h2>Shopping Cart</h2>
             {cartproducts.map((item, index) => (
-              <CartItem key={index} item={item} />
+              <CartItem key={index} item={item}  />
             ))}
             <p className="subtotal">
               Subtotal({cartproducts.length} items): <b>$44</b>
@@ -38,7 +41,7 @@ export default function CartPage() {
             </p>
           </div>
         )}
-        <div className="your-items">
+        {/* <div className="your-items">
           <h2>Your Items</h2>
           <div className="item-options">
             <div className="item-option-name">
@@ -47,9 +50,8 @@ export default function CartPage() {
                 <NavLink to="buyItLater">Buy it again</NavLink>
               </nav>
             </div>
-            <Outlet />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="items-subtotal">
         <p>

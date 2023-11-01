@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import "../styles/cartPage.scss";
+
+
 
 export default function Saved() {
   return (
     <div>
-      no item saved
+      <p> no item saved</p>
     </div>
-  )
+  );
 }
