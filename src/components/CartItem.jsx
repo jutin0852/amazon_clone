@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/cartItem.scss";
+import { products } from "../components/allProducts";
 
 import DropDown from "./DropDown";
 import { useCartDispatch } from "./cartContext";
 
-export default function CartItem({ item}) {
-  const dispatch = useCartDispatch()
+export default function CartItem({ cartItem }) {
+  const dispatch = useCartDispatch();
+  const [itemQty, setItemQty] = useState(cartItem.qty);
+
+  let item = products.find((product) => product.productId === cartItem.id);
 
   return (
     <div className="cart-item">
@@ -18,7 +22,13 @@ export default function CartItem({ item}) {
         <h3>{item.pricing.price}</h3>
         <p>size: {item.pack}</p>
         <div className="cart-item-options">
-          <DropDown options={[1, 2, 3]} sort={`qty:`} />
+          <DropDown
+            options={[1, 2, 3, 4, 5]}
+            sort={`qty:`}
+            itemQty={itemQty}
+            setItemQty={setItemQty}
+            cartItem={cartItem}
+          />
           <span
             onClick={() => {
               dispatch({
@@ -29,7 +39,6 @@ export default function CartItem({ item}) {
           >
             delete
           </span>
-  
         </div>
       </div>
     </div>

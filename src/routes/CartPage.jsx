@@ -2,30 +2,35 @@ import React from "react";
 import { useCartId } from "../components/cartContext";
 import { products } from "../components/allProducts";
 import "../styles/cartPage.scss";
-import { Outlet,NavLink } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import CartItem from "../components/cartItem";
 
+function cartFunc() {}
 
 export default function CartPage() {
-  
+  // cart items is the main array that is mapped display the all items in the cart
   const cartItems = useCartId();
-  let cartproducts = cartItems.map((cartid) =>
-    products.find((product) => product.productId === cartid)
-  );
 
-  console.log(cartproducts, cartItems);
+
+  // cart products checks the product list to get details of the items in the cart
+
+  let productPrice = cartItems.map((product) => product.price * product.qty);
+  let subTotal = productPrice.reduce((sum, current) => sum + current, 0);
+
+  console.log( cartItems, subTotal);
 
   return (
     <div className="cart-page">
       <div className="cart">
-        {cartproducts.length !== 0 ? (
+        {cartItems.length !== 0 ? (
           <div className="item-in-cart">
             <h2>Shopping Cart</h2>
-            {cartproducts.map((item, index) => (
-              <CartItem key={index} item={item}  />
+            {cartItems.map((items, index) => (
+              <CartItem key={index} cartItem={items} />
             ))}
+
             <p className="subtotal">
-              Subtotal({cartproducts.length} items): <b>$44</b>
+              Subtotal({cartItems.length} items): <b>${subTotal}</b>
             </p>
           </div>
         ) : (
@@ -55,7 +60,7 @@ export default function CartPage() {
       </div>
       <div className="items-subtotal">
         <p>
-          Subtotal({cartproducts.length} items): <b>$44</b>
+          Subtotal({cartItems.length} items): <b>${subTotal}</b>
         </p>
       </div>
     </div>

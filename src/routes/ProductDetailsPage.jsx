@@ -26,6 +26,7 @@ function ProductDetailsPage() {
 
   const dispatch = useCartDispatch();
   const [imgPreview, setImgPreview] = useState(productImgs.detailsImg[0]);
+  const [itemQty, setItemQty] = useState(1);
 
   return (
     <div className="product-details-page">
@@ -116,21 +117,30 @@ function ProductDetailsPage() {
                 <span className="nine-nine">99</span>
                 <span>{pricing.per} </span>
               </div>
+
               <h3 style={{ color: "green " }}>in Stock</h3>
-              <DropDown options={[1, 2, 3]} sort={`qty:`} />
+
+              <DropDown
+                options={[1, 2, 3, 4, 5]}
+                sort={`qty:`}
+                itemQty={itemQty}
+                setItemQty={setItemQty}
+              />
+
               <Link to={"/cart"}>
                 <button
                   onClick={() => {
                     dispatch({
                       type: "addToCart",
                       id: productId,
+                      qty: itemQty,
+                      price: price,
                     });
                   }}
                 >
                   Add to cart
                 </button>
               </Link>
-              <button>Buy Now</button>
             </div>
           </div>
         </div>

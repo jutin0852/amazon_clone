@@ -13,9 +13,18 @@ export function useCartDispatch() {
 
 export function CartReducer(cart, action) {
   if (action.type === "addToCart") {
-    return [...cart, action.id];
+    return [...cart, { id: action.id, qty: action.qty, price: action.price }];
   }
   if (action.type === "RemoveFromCart") {
     return cart.filter((item) => item !== action.id);
+  }
+  if (action.type === "changeQty") {
+    return cart.map((item) => {
+      if (item.id === action.item.id) {
+        return action.item;
+      } else {
+        return item;
+      }
+    });
   }
 }

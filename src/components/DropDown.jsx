@@ -2,12 +2,12 @@ import React from "react";
 import "../styles/DropDown.scss";
 import { useState, useRef } from "react";
 import { useEffect } from "react";
+import { useCartDispatch } from "./cartContext";
 
-
-
-function DropDown({options,sort}) {
-  const [title, setTitle] = useState(options[0]);
+function DropDown({ options, sort, setItemQty, itemQty, cartItem }) {
+  // const [itemQty, setItemQty] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useCartDispatch();
   const ref = useRef(null);
 
   const handleMouseDown = (e) => {
@@ -27,6 +27,16 @@ function DropDown({options,sort}) {
       document.removeEventListener("mousedown", handleMouseDown);
     };
   }, [isOpen]);
+
+  // useEffect(() => {
+  //    if (cartItem) {
+  //      dispatch({
+  //        type: "changeQty",
+  //        item: { ...cartItem, qty: itemQty },
+  //        id: cartItem.id,
+  //      });
+  //    }
+  // },[itemQty])
   return (
     <div className="drop-down">
       <div
@@ -35,15 +45,24 @@ function DropDown({options,sort}) {
           setIsOpen(!isOpen);
         }}
       >
-        {sort}{title}
+        {sort}
+        {itemQty}
       </div>
       {isOpen && (
         <ul ref={ref}>
           {options.map((option, index) => (
             <li
-              className={option === title ? "active" : ""}
+              className={option === itemQty ? "active" : ""}
               onClick={() => {
-                setIsOpen(!isOpen), setTitle(option);
+                if (cartItem) {
+                  dispatch({
+                    type: "changeQty",
+                    item: { ...cartItem , qty: option  },
+                  });
+                }
+
+                setIsOpen(!isOpen), setItemQty(option);
+                console.log(cartItem, option);
               }}
               key={index}
             >
