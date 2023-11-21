@@ -1,7 +1,8 @@
 import React from "react";
 import { useCartId } from "../components/cartContext";
 import "../styles/cartPage.scss";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/CartProduct";
+import CartProduct from "../components/CartProduct";
 
 export default function CartPage() {
   // cart items is the main array that is mapped display the all items in the cart
@@ -20,7 +21,7 @@ export default function CartPage() {
             <h2>Shopping Cart</h2>
 
             {cartItems.map((item, index) => (
-              <CartItem key={index} Item={item} />
+              <CartProduct key={index} Item={item} />
             ))}
 
             <div className="subtotal">

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../styles/cartItem.scss";
-import { products } from "../components/allProducts";
+import { products } from "./allProducts";
 
 import DropDown from "./DropDown";
 import { useCartDispatch } from "./cartContext";
 
-export default function CartItem({ cartItem }) {
+export default function CartProduct({ cartItem }) {
   const dispatch = useCartDispatch();
   const [itemQty, setItemQty] = useState(cartItem.qty);
 
