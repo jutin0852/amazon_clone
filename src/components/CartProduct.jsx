@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/cartItem.scss";
-import { products } from "./allProducts";
+import { products } from "../components/allProducts";
 
 import DropDown from "./DropDown";
 import { useCartDispatch } from "./cartContext";

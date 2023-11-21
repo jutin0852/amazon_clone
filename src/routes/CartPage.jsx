@@ -20,7 +20,7 @@ export default function CartPage() {
             <h2>Shopping Cart</h2>
 
             {cartItems.map((item, index) => (
-              <CartProduct key={index} Item={item} />
+              <CartProduct key={index} cartItem={item} />
             ))}
 
             <div className="subtotal">
