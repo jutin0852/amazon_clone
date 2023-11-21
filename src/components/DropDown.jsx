@@ -28,15 +28,6 @@ function DropDown({ options, sort, setItemQty, itemQty, cartItem }) {
     };
   }, [isOpen]);
 
-  // useEffect(() => {
-  //    if (cartItem) {
-  //      dispatch({
-  //        type: "changeQty",
-  //        item: { ...cartItem, qty: itemQty },
-  //        id: cartItem.id,
-  //      });
-  //    }
-  // },[itemQty])
   return (
     <div className="drop-down">
       <div
@@ -56,8 +47,8 @@ function DropDown({ options, sort, setItemQty, itemQty, cartItem }) {
               onClick={() => {
                 if (cartItem) {
                   dispatch({
-                    type: "changeQty",
-                    item: { ...cartItem , qty: option  },
+                    type: "editCartItem",
+                    item: { ...cartItem, qty: option },
                   });
                 }
 

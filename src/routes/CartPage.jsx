@@ -5,19 +5,16 @@ import "../styles/cartPage.scss";
 import { Outlet, NavLink } from "react-router-dom";
 import CartItem from "../components/cartItem";
 
-function cartFunc() {}
-
 export default function CartPage() {
   // cart items is the main array that is mapped display the all items in the cart
   const cartItems = useCartId();
 
-
-  // cart products checks the product list to get details of the items in the cart
-
-  let productPrice = cartItems.map((product) => product.price * product.qty);
+  let productPrice = cartItems
+    .filter((product) => product.checked)
+    .map((product) => product.price * product.qty);
   let subTotal = productPrice.reduce((sum, current) => sum + current, 0);
 
-  console.log( cartItems, subTotal);
+  // console.log(cartItems, subTotal);
 
   return (
     <div className="cart-page">
@@ -25,13 +22,20 @@ export default function CartPage() {
         {cartItems.length !== 0 ? (
           <div className="item-in-cart">
             <h2>Shopping Cart</h2>
+
             {cartItems.map((items, index) => (
               <CartItem key={index} cartItem={items} />
             ))}
 
-            <p className="subtotal">
-              Subtotal({cartItems.length} items): <b>${subTotal}</b>
-            </p>
+            <div className="subtotal">
+              {subTotal === 0 ? (
+                <p>No item selected</p>
+              ) : (
+                <p>
+                  Subtotal({productPrice.length} items): <b>${subTotal}</b>
+                </p>
+              )}
+            </div>
           </div>
         ) : (
           <div className="empty-cart">
@@ -59,9 +63,13 @@ export default function CartPage() {
         </div> */}
       </div>
       <div className="items-subtotal">
-        <p>
-          Subtotal({cartItems.length} items): <b>${subTotal}</b>
-        </p>
+        {subTotal === 0 ? (
+          <p>No item selected</p>
+        ) : (
+          <p>
+            Subtotal({productPrice.length} items):<b>${subTotal}</b>
+          </p>
+        )}
       </div>
     </div>
   );

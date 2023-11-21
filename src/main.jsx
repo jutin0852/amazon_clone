@@ -16,6 +16,7 @@ import ProductDetailsPage, {
 import CartPage from "./routes/CartPage";
 import Saved from "./components/saved";
 import BuyItLater from "./components/BuyItLater";
+import SearchErrorPage from "./routes/SearchErrorPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         path=":productName"
         element={<ProductDetailsPage />}
         loader={productDetailsLoader}
+        errorElement={<SearchErrorPage />}
       />
     </Route>
   )

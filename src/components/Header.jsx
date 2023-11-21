@@ -1,37 +1,11 @@
 import React, { useState } from "react";
 import "../styles/Header.scss";
-import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Link } from "react-router-dom";
 import { useCartId } from "./cartContext";
-const category = [
-  "All",
-  "Arts and craft",
-  " Automotive",
-  "Baby",
-  "Beauty & personal Care",
-  "Books",
-  " Computer",
-  " Deals",
-  " Digital music",
-  "Electronics",
-  "Girls Fashion",
-  "Health & Household",
-  "Industrial & scientific",
-  "kindle Store",
-  "Luggage",
-  "Men's Fashion",
-  "Movies & TV",
-  "Music, CDs & Vinyl",
-  "Pet supplies",
-  "Prime Video",
-  "Software",
-  "Sports & Outdoors",
-  "Tools & Home Improvement",
-  "Toys and Games",
-  "Video Games",
-  "Womens Fashion",
-];
+import SearchBar from "./SearchBar";
+
+
 function Header() {
   const cart = useCartId()
   return (
@@ -50,23 +24,7 @@ function Header() {
         </div>
       </div>
 
-      <form className="search">
-        <div className="drop-down">
-          <select name="categories" id="categories">
-            {category.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <input className="input" type="text" placeholder="Search Amazon" />
-
-        <button>
-          <SearchIcon />
-        </button>
-      </form>
+      <SearchBar />
 
       <div className="header-options">
         <div className="header-option">

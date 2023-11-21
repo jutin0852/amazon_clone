@@ -9,15 +9,25 @@ export default function CartItem({ cartItem }) {
   const dispatch = useCartDispatch();
   const [itemQty, setItemQty] = useState(cartItem.qty);
 
+  // item checks the product list to get details of the items in the cart
   let item = products.find((product) => product.productId === cartItem.id);
 
   return (
     <div className="cart-item">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        checked={cartItem.checked}
+        onChange={() => {
+          dispatch({
+            type: "editCartItem",
+            item: { ...cartItem, checked: !cartItem.checked },
+          });
+        }}
+      />
       <div className="cart-item-img">
         <img src={item.productImgs.cartImg} alt="" />
       </div>
-      <div>
+      <div className="cart-item-details">
         <p className="item-name">{item.productName}</p>
         <h3>{item.pricing.price}</h3>
         <p>size: {item.pack}</p>
@@ -31,6 +41,7 @@ export default function CartItem({ cartItem }) {
           />
           <span
             onClick={() => {
+              console.log(item.productId, cartItem.id);
               dispatch({
                 type: "RemoveFromCart",
                 id: item.productId,
