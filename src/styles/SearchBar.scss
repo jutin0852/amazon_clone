@@ -96,3 +96,21 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .search {
+    display: flex;
+    justify-content: center;
+    // margin: auto 0;
+    // // color: black;
+    // // height: 42px;
+    // box-sizing: border-box;
+    width: 95%;
+    margin:0 2% ;
+    position: absolute;
+
+    
+    top: 58px;
+    z-index: 3;
+  }
+}

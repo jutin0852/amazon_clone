@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../styles/Header.scss";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Link } from "react-router-dom";
 import { useCartId } from "./cartContext";
 import SearchBar from "./SearchBar";
 
-
 function Header() {
-  const cart = useCartId()
+  const cart = useCartId();
   return (
     <div className="header">
       <Link to="/">
@@ -19,8 +19,10 @@ function Header() {
       <div className="location">
         <div className="location-logo"></div>
         <div className="location-country">
-          <span style={{ color: "#ccc" }}>Deliver to</span>
-          <strong>Nigeria</strong>
+          <span style={{ color: "#ccc", paddingRight: "3px" }}>
+            Deliver to{" "}
+          </span>
+          <strong> Nigeria</strong>
         </div>
       </div>
 
@@ -48,6 +50,8 @@ function Header() {
           <span>Returns</span>
           <strong>& Orders </strong>
         </div>
+        <PersonOutlineOutlinedIcon fontSize="large" className="person-icon" />
+
         <Link to={"/cart"}>
           <div className="cart">
             <div className="cart-logo"></div>
