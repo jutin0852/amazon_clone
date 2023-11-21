@@ -1,9 +1,8 @@
 import React from "react";
 import { useCartId } from "../components/cartContext";
-import { products } from "../components/allProducts";
 import "../styles/cartPage.scss";
-import { Outlet, NavLink } from "react-router-dom";
-import CartItem from "../components/cartItem";
+import CartItem from "../components/CartProduct";
+import CartProduct from "../components/CartProduct";
 
 export default function CartPage() {
   // cart items is the main array that is mapped display the all items in the cart
@@ -14,8 +13,6 @@ export default function CartPage() {
     .map((product) => product.price * product.qty);
   let subTotal = productPrice.reduce((sum, current) => sum + current, 0);
 
-  // console.log(cartItems, subTotal);
-
   return (
     <div className="cart-page">
       <div className="cart">
@@ -23,8 +20,8 @@ export default function CartPage() {
           <div className="item-in-cart">
             <h2>Shopping Cart</h2>
 
-            {cartItems.map((items, index) => (
-              <CartItem key={index} cartItem={items} />
+            {cartItems.map((item, index) => (
+              <CartProduct key={index} Item={item} />
             ))}
 
             <div className="subtotal">
