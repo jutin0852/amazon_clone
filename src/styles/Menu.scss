@@ -27,12 +27,33 @@
       &:hover {
         border: 1px solid white;
       }
-
-     
     }
   }
 }
- a {
-        color: white;
-        text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    bottom: 28px;
+    background-color: #131a22;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .menu {
+    .all {
+        font-size: 0.8em;
+    }
+    ul {
+      li {
+        padding: 8px 4px;
+        font-size: 0.8em;
       }
+    }
+  }
+}

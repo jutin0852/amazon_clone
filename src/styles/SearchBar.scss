@@ -1,0 +1,116 @@
+.search {
+  display: flex;
+  margin: auto 0;
+  color: black;
+  height: 42px;
+  box-sizing: border-box;
+  width: 58%;
+  position: relative;
+
+  .drop-down {
+    position: absolute;
+    left: 0px;
+    border-radius: 4px 0 0 4px;
+    width: 50px;
+    height: inherit;
+    border-right: 1px solid rgb(215, 213, 213);
+    z-index: 1;
+
+    select {
+      width: inherit;
+      height: 42px;
+      position: relative;
+      opacity: 1;
+      border-radius: 4px 0 0 4px;
+      color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(243, 243, 243);
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+        background-color: rgba(243, 243, 243, 0.4);
+      }
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+
+  input {
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 70px;
+    width: 100%;
+    position: relative;
+
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &:focus {
+      outline: 4px solid orange;
+    }
+  }
+
+  button {
+    background-color: rgba(255, 166, 0, 0.669);
+    position: absolute;
+    right: 0px;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    border: none;
+    height: inherit;
+    width: 45px;
+    cursor: pointer;
+  }
+
+  .search-results {
+    position: absolute;
+    background-color: white;
+    top: 50px;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+
+    .selected-item {
+      background-color: #e3e6e6;
+    }
+
+    li {
+      list-style-type: none;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #e3e6e6;
+      }
+    }
+
+    a {
+      color: black;
+      padding: 5px;
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .search {
+    display: flex;
+    justify-content: center;
+    // margin: auto 0;
+    // // color: black;
+    // // height: 42px;
+    // box-sizing: border-box;
+    width: 95%;
+    margin:0 2% ;
+    position: absolute;
+
+    
+    top: 58px;
+    z-index: 3;
+  }
+}

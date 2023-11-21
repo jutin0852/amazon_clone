@@ -76,7 +76,6 @@ const deals = [
   "images/product/deals/deal11.jpg",
 ];
 
-
 export default function ProductsInHome() {
   return (
     <div>
@@ -96,6 +95,9 @@ export default function ProductsInHome() {
         <Product
           singleImg={"images/product/personal.jpg"}
           name={"Health & Personal Care"}
+          link={
+            "products?category=beauty-and-personal-care&subcategory=personal-care"
+          }
           shopNow={true}
         />
         <Product

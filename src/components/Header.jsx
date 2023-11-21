@@ -1,40 +1,16 @@
 import React, { useState } from "react";
 import "../styles/Header.scss";
-import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Link } from "react-router-dom";
-const category = [
-  "All",
-  "Arts and craft",
-  " Automotive",
-  "Baby",
-  "Beauty & personal Care",
-  "Books",
-  " Computer",
-  " Deals",
-  " Digital music",
-  "Electronics",
-  "Girls Fashion",
-  "Health & Household",
-  "Industrial & scientific",
-  "kindle Store",
-  "Luggage",
-  "Men's Fashion",
-  "Movies & TV",
-  "Music, CDs & Vinyl",
-  "Pet supplies",
-  "Prime Video",
-  "Software",
-  "Sports & Outdoors",
-  "Tools & Home Improvement",
-  "Toys and Games",
-  "Video Games",
-  "Womens Fashion",
-];
+import { useCartId } from "./cartContext";
+import SearchBar from "./SearchBar";
+
 function Header() {
+  const cart = useCartId();
   return (
     <div className="header">
-      <Link to='/'>
+      <Link to="/">
         <div className="amazon-container">
           <div className="amazon-logo"> </div>
         </div>
@@ -43,28 +19,14 @@ function Header() {
       <div className="location">
         <div className="location-logo"></div>
         <div className="location-country">
-          <span style={{ color: "#ccc" }}>Deliver to</span>
-          <strong>Nigeria</strong>
+          <span style={{ color: "#ccc", paddingRight: "3px" }}>
+            Deliver to{" "}
+          </span>
+          <strong> Nigeria</strong>
         </div>
       </div>
 
-      <form className="search">
-        <div className="drop-down">
-          <select name="categories" id="categories">
-            {category.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <input className="input" type="text" placeholder="Search Amazon" />
-
-        <button>
-          <SearchIcon />
-        </button>
-      </form>
+      <SearchBar />
 
       <div className="header-options">
         <div className="header-option">
@@ -88,11 +50,15 @@ function Header() {
           <span>Returns</span>
           <strong>& Orders </strong>
         </div>
-        <div className="cart">
-          <div className="cart-logo"></div>
-          <strong className="cart-name">Cart</strong>
-          <strong className="cart-num">0</strong>
-        </div>
+        <PersonOutlineOutlinedIcon fontSize="large" className="person-icon" />
+
+        <Link to={"/cart"}>
+          <div className="cart">
+            <div className="cart-logo"></div>
+            <strong className="cart-name">Cart</strong>
+            <strong className="cart-num">{cart.length}</strong>
+          </div>
+        </Link>
       </div>
     </div>
   );

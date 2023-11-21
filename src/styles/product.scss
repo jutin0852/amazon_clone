@@ -1,5 +1,5 @@
 .product {
-  width: 21.5%;
+  width: 20%;
   position: relative;
   background-color: white;
   padding: 20px;
@@ -86,4 +86,24 @@
   justify-content: space-between;
   box-sizing: border-box;
   padding: 20px;
+}
+
+@media screen and (max-width:1330px) {
+  .product{
+    width: 28%;
+  }
+  
+}
+@media screen and (max-width:1050px) {
+  .product{
+    width: 44%;
+  }
+  
+}
+
+@media screen and (max-width:850px) {
+  .product{
+    width:90% ;
+  }
+  
 }

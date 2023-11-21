@@ -1,7 +1,13 @@
 export const products = [
   {
+    productId: 1,
     productName:
-      "Hismile v34 Colour Corrector, Tooth Stain Removal, Teeth Whitening Booster, Purple Toothpaste, Colour Correcting, Hismile V34, Hismile Colour Corrector, Tooth Colour Corrector",
+      "Hismile v34 Colour Corrector, Tooth Stain Removal, Teeth Whitening Booster, Purple Toothpaste, Colour Correcting, Hismile V34",
+    brand: "HISMILE",
+    productBenefits: "Whitening",
+    itemForm: "Gel",
+    NumberOfItem: "1",
+    MaterialTypeFree: "Peroxide free",
     price: 22,
     pack: "1 Fl Oz (Pack of 1)",
     sold: "100K+ bought in past month",
@@ -9,12 +15,122 @@ export const products = [
       per: "($22.00/Fl Oz)",
       type: "Typical",
       typePrice: "$23.20",
+      percentOff: "-24%",
+      price: "$22",
     },
+    aboutItem: [
+      "Instantly cancels yellow undertones for a whiter smile",
+      "Non-invasive, simply brush on like regular toothpaste",
+      "Balances warm and cool tones to reveal your brightest white smile",
+      "No harsh peroxides, safe for daily use",
+    ],
+    note: "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing",
     productImgs: {
       displayImg: "/images/product/personal_care/personal_care1.jpg",
+      cartImg: "/images/product/personal_care/cartimg.jpg",
+      detailsImg: [
+        "/images/product/personal_care/personal_care1.jpg",
+        "/images/product/personal_care/personal_care2big.jpg",
+        "/images/product/personal_care/personal_care3big.jpg",
+        "/images/product/personal_care/personal_care4big.jpg",
+        "/images/product/personal_care/personal_care5big.jpg",
+        "/images/product/personal_care/personal_care6big.jpg",
+      ],
     },
     category: {
-      categoryName: "Beauty & Personal Care",
+      categoryName: "Beauty & personal Care",
+      categorySlug: "beauty-and-personal-care",
+      subCategory: {
+        categoryName: "Personal Care",
+        categorySlug: "personal-care",
+      },
+    },
+  },
+  {
+    productId: 2,
+    productName: "juhtin",
+    brand: "HISMILE",
+    productBenefits: "Whitening",
+    itemForm: "Gel",
+    NumberOfItem: "1",
+    MaterialTypeFree: "Peroxide free",
+    price: 22,
+    pack: "1 Fl Oz (Pack of 1)",
+    sold: "100K+ bought in past month",
+    pricing: {
+      per: "($22.00/Fl Oz)",
+      type: "Typical",
+      typePrice: "$23.20",
+      percentOff: "-24%",
+      price: "$22",
+    },
+    aboutItem: [
+      "Instantly cancels yellow undertones for a whiter smile",
+      "Non-invasive, simply brush on like regular toothpaste",
+      "Balances warm and cool tones to reveal your brightest white smile",
+      "No harsh peroxides, safe for daily use",
+    ],
+    note: "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing",
+    productImgs: {
+      displayImg: "/images/product/personal_care/personal_care1.jpg",
+      cartImg: "/images/product/personal_care/cartimg.jpg",
+      detailsImg: [
+        "/images/product/personal_care/personal_care1.jpg",
+        "/images/product/personal_care/personal_care2big.jpg",
+        "/images/product/personal_care/personal_care3big.jpg",
+        "/images/product/personal_care/personal_care4big.jpg",
+        "/images/product/personal_care/personal_care5big.jpg",
+        "/images/product/personal_care/personal_care6big.jpg",
+      ],
+    },
+    category: {
+      categoryName: "Electronics",
+      categorySlug: "electronics",
+      subCategory: {
+        categoryName: "Personal Care",
+        categorySlug: "personal-care",
+      },
+    },
+  },
+  {
+    productId: 3,
+    productName: "chinwe",
+    brand: "HISMILE",
+    productBenefits: "Whitening",
+    itemForm: "Gel",
+    NumberOfItem: "1",
+    MaterialTypeFree: "Peroxide free",
+    price: 22,
+    pack: "1 Fl Oz (Pack of 1)",
+    sold: "100K+ bought in past month",
+    pricing: {
+      per: "($22.00/Fl Oz)",
+      type: "Typical",
+      typePrice: "$23.20",
+      percentOff: "-24%",
+      price: "$22",
+    },
+    aboutItem: [
+      "Instantly cancels yellow undertones for a whiter smile",
+      "Non-invasive, simply brush on like regular toothpaste",
+      "Balances warm and cool tones to reveal your brightest white smile",
+      "No harsh peroxides, safe for daily use",
+    ],
+    note: "Products with electrical plugs are designed for use in the US. Outlets and voltage differ internationally and this product may require an adapter or converter for use in your destination. Please check compatibility before purchasing",
+    productImgs: {
+      displayImg: "/images/product/personal_care/personal_care1.jpg",
+      cartImg: "/images/product/personal_care/cartimg.jpg",
+      detailsImg: [
+        "/images/product/personal_care/personal_care1.jpg",
+        "/images/product/personal_care/personal_care2big.jpg",
+        "/images/product/personal_care/personal_care3big.jpg",
+        "/images/product/personal_care/personal_care4big.jpg",
+        "/images/product/personal_care/personal_care5big.jpg",
+        "/images/product/personal_care/personal_care6big.jpg",
+      ],
+    },
+    category: {
+      categoryName: "Beauty & personal Care",
       categorySlug: "beauty-and-personal-care",
       subCategory: {
         categoryName: "Personal Care",
@@ -23,6 +139,3 @@ export const products = [
     },
   },
 ];
-
-//
-// const category = "Electronics"
