@@ -1,7 +1,6 @@
 import React from "react";
 import { useCartId } from "../components/cartContext";
 import "../styles/cartPage.scss";
-import CartItem from "../components/CartProduct";
 import CartProduct from "../components/CartProduct";
 
 export default function CartPage() {
