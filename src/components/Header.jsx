@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Header.scss";
+import "../styles/header.scss";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Link } from "react-router-dom";
