@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import "../styles/CartItem.scss";
+import "../styles/cartItem.scss";
 import { products } from "../components/allProducts";
 
 import DropDown from "./DropDown";
 import { useCartDispatch } from "./cartContext";
 
-export default function CartItem ({ Item }) {
+export default function CartItem({ cartItem }) {
   const dispatch = useCartDispatch();
-  const [itemQty, setItemQty] = useState(Item.qty);
+  const [itemQty, setItemQty] = useState(cartItem.qty);
 
   // item checks the product list to get details of the items in the cart
-  let item = products.find((product) => product.productId === Item.id);
+  let item = products.find((product) => product.productId === cartItem.id);
 
   return (
     <div className="cart-item">
       <input
         type="checkbox"
-        checked={Item.checked}
+        checked={cartItem.checked}
         onChange={() => {
           dispatch({
-            type: "editItem",
-            item: { ...Item, checked: !Item.checked },
+            type: "editCartItem",
+            item: { ...cartItem, checked: !cartItem.checked },
           });
         }}
       />
@@ -37,11 +37,11 @@ export default function CartItem ({ Item }) {
             sort={`qty:`}
             itemQty={itemQty}
             setItemQty={setItemQty}
-            Item={Item}
+            cartItem={cartItem}
           />
           <span
             onClick={() => {
-              console.log(item.productId, Item.id);
+              console.log(item.productId, cartItem.id);
               dispatch({
                 type: "RemoveFromCart",
                 id: item.productId,
