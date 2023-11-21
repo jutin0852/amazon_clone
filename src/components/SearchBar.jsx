@@ -11,8 +11,6 @@ export default function SearchBar() {
   const [categoryName, setCategoryName] = useState("All");
   const navigate = useNavigate();
 
-  console.log(categoryName);
-
   const handleChange = (e) => {
     setSearchText(e.target.value);
   };
@@ -46,8 +44,7 @@ export default function SearchBar() {
     if (searchText) {
       let searchData;
       if (categoryName !== "All") {
-        console.log("not all");
-
+              
         let productCategory = products.filter(
           (products) => products.category.categoryName === categoryName
         );

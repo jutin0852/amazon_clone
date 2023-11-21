@@ -12,7 +12,6 @@ import SearchErrorPage from "./SearchErrorPage";
 
 function ProductDetailsPage() {
   const productDetails = useLoaderData();
-  console.log(typeof productDetails);
 
   if (typeof productDetails === "object") {
     const {
